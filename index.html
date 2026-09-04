@@ -2,225 +2,228 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#f7f8f3">
-<meta name="description" content="Clube de Leituras — indicações de livros e textos para descobrir novas ideias.">
-<title>Clube de Leituras</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#090d1a">
+<meta name="description" content="Central Online — acesso rápido e simples à plataforma digital.">
+<title>Central Online</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap');
 
 :root{
-  --bg:#f3efe7; --surface:#fffdf8; --surface-2:#ebe4d7;
-  --text:#211f1c; --muted:#716b62; --primary:#8f2942;
-  --primary-dark:#681d30; --accent:#176b73; --gold:#c79a45;
-  --line:#ded6c8; --shadow:0 22px 60px rgba(55,45,35,.12);
+  --bg:#080b14;--panel:#101625;--panel2:#151c2e;--text:#f7f8fc;
+  --muted:#929bb0;--violet:#7567ff;--cyan:#3bd9e9;--green:#65dfb0;
+  --border:rgba(255,255,255,.09);--radius:20px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
-  font-family:"DM Sans",system-ui,sans-serif;
-  min-height:100vh;
-  color:var(--text);
-  background:
-    radial-gradient(circle at 8% 0%,rgba(199,154,69,.16),transparent 30%),
-    radial-gradient(circle at 92% 12%,rgba(23,107,115,.10),transparent 26%),
-    var(--bg);
-  padding:18px;
+  min-height:100vh;background:
+  linear-gradient(180deg,#0b0f1c 0%,#080b14 65%);
+  color:var(--text);font-family:"DM Sans",system-ui,sans-serif;
   -webkit-font-smoothing:antialiased;
 }
-.container{width:min(100%,900px);margin:auto}
-.header{
-  display:flex;align-items:center;justify-content:space-between;gap:16px;
-  margin-bottom:16px;padding:9px 2px 17px;
-  border-bottom:1px solid var(--line)
+a{text-decoration:none;color:inherit}
+.container{width:min(100% - 40px,1040px);margin:auto}
+
+.topbar{
+  height:78px;display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid var(--border)
 }
-.logo{display:flex;align-items:center;gap:11px}
-.logo-mark{
-  width:43px;height:43px;border-radius:14px;
-  display:grid;place-items:center;
-  background:var(--primary);
-  color:#fff;font-family:"Plus Jakarta Sans",sans-serif;
-  font-size:19px;font-weight:800;
-  box-shadow:0 10px 24px rgba(143,41,66,.20)
+.brand{display:flex;align-items:center;gap:11px}
+.logo{
+  width:37px;height:37px;border-radius:10px;
+  background:var(--violet);display:grid;place-items:center;
+  font-weight:800;font-size:16px
 }
-.logo strong{font-size:15px;font-weight:800}
-.logo small{display:block;margin-top:3px;color:var(--muted);font-size:10px}
-.badge{
-  padding:7px 11px;border:1px solid rgba(34,211,238,.18);
-  border-radius:999px;background:rgba(34,211,238,.08);
-  color:#8deaf7;font-size:9px;font-weight:800
+.brand strong{font-size:14px;display:block}
+.brand small{font-size:9px;color:var(--muted);display:block;margin-top:2px}
+.status{
+  display:flex;align-items:center;gap:7px;font-size:10px;
+  font-weight:700;color:var(--green)
 }
+.status i{width:7px;height:7px;border-radius:50%;background:var(--green)}
+
 .hero{
-  display:grid;grid-template-columns:1.1fr .9fr;gap:25px;align-items:center;
-  position:relative;overflow:hidden;padding:clamp(30px,6vw,55px);
-  border:1px solid var(--line);border-radius:28px;
-  background:var(--surface);
-  box-shadow:var(--shadow)
+  padding:55px 0 34px;
+  display:grid;grid-template-columns:1fr 360px;gap:22px;align-items:stretch
 }
-.hero:before{
-  content:"";position:absolute;width:290px;height:290px;border-radius:50%;
-  right:-125px;top:-135px;
-  background:radial-gradient(circle,rgba(124,92,255,.28),transparent 68%)
+.hero-main{
+  padding:46px 0 40px;
+  display:flex;flex-direction:column;justify-content:center
 }
-.hero:after{
-  content:"";position:absolute;width:180px;height:180px;border-radius:50%;
-  left:-120px;bottom:-120px;background:rgba(34,211,238,.08)
+.tag{
+  width:max-content;padding:6px 9px;border-radius:7px;
+  color:var(--cyan);background:rgba(59,217,233,.08);
+  font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;
+  margin-bottom:18px
 }
-.kicker{
-  position:relative;display:inline-flex;align-items:center;
-  padding:7px 11px;margin-bottom:17px;border-radius:999px;
-  background:rgba(199,154,69,.10);border:1px solid rgba(199,154,69,.24);
-  color:var(--primary);font-size:9px;font-weight:800;
-  letter-spacing:.1em;text-transform:uppercase
+h1{
+  max-width:650px;font-size:clamp(42px,6.5vw,70px);
+  line-height:.98;letter-spacing:-.065em;font-weight:800
 }
-.hero h1{
-  position:relative;max-width:570px;margin-bottom:16px;
-  font-family:"Plus Jakarta Sans",sans-serif;
-  font-size:clamp(38px,6vw,59px);line-height:1.03;
-  letter-spacing:-.06em;font-weight:800
-}
-.hero h1 span{
-  background:linear-gradient(90deg,var(--primary),var(--accent));
-  -webkit-background-clip:text;background-clip:text;color:transparent
-}
-.hero p{
-  position:relative;max-width:570px;margin-bottom:25px;
-  color:var(--muted);font-size:14px;line-height:1.75
+h1 span{color:var(--cyan)}
+.hero-main p{
+  max-width:520px;color:var(--muted);font-size:13px;line-height:1.8;
+  margin:20px 0 27px
 }
 .cta{
-  position:relative;display:inline-flex;align-items:center;justify-content:center;
-  gap:11px;width:min(100%,350px);min-height:52px;padding:14px 20px;
-  border-radius:13px;background:var(--primary);
-  color:#fff;text-decoration:none;font-size:13px;font-weight:800;
-  box-shadow:0 13px 28px rgba(143,41,66,.20);
-  transition:.2s ease
+  width:min(100%,430px);display:inline-flex;align-items:center;justify-content:space-between;gap:14px;
+  padding:18px 24px;border-radius:14px;background:var(--violet);
+  font-size:15px;font-weight:800;box-shadow:0 16px 38px rgba(117,103,255,.28);
+  transition:.2s
 }
-.cta:hover{transform:translateY(-2px);filter:brightness(1.08)}
-.cta span{font-size:17px}
-.plate{
-  min-height:285px;border-radius:23px;
-  display:grid;place-items:center;position:relative;
-  background:linear-gradient(145deg,#eee6d8,#f9f5ed);
-  border:1px solid rgba(255,255,255,.08)
+.cta .arrow{font-size:16px}
+.cta:hover{transform:translateY(-2px);background:#8276ff}
+
+.action-panel{
+  position:relative;overflow:hidden;background:var(--panel);
+  border:1px solid var(--border);border-radius:var(--radius);
+  padding:25px;display:flex;flex-direction:column;justify-content:space-between;
+  min-height:340px
 }
-.plate-circle{
-  width:205px;height:205px;border-radius:50%;overflow:hidden;
-  display:grid;grid-template-columns:1fr 1fr;
-  background:#0b1220;border:7px solid rgba(255,255,255,.9);
-  box-shadow:0 22px 45px rgba(0,0,0,.32)
+.action-panel:after{
+  content:"";position:absolute;width:210px;height:210px;border-radius:50%;
+  right:-95px;top:-95px;background:rgba(117,103,255,.12)
 }
-.food{display:flex;align-items:center;justify-content:center;font-size:42px}
-.food:nth-child(1){background:#315e4a}.food:nth-child(2){background:#80692f}
-.food:nth-child(3){background:#75423b}.food:nth-child(4){background:#50406f}
-.section-title{
-  font-family:"Plus Jakarta Sans",sans-serif;font-size:29px;
-  letter-spacing:-.04em;margin:32px 0 14px
+.panel-top{position:relative;z-index:1;display:flex;justify-content:space-between}
+.panel-number{font-size:9px;color:var(--muted);font-weight:700}
+.panel-label{
+  font-size:9px;color:var(--cyan);font-weight:800;
+  text-transform:uppercase;letter-spacing:.08em
 }
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.card{
-  min-height:170px;padding:19px;border:1px solid var(--line);
-  border-radius:18px;background:rgba(255,253,248,.92);
-  box-shadow:0 10px 28px rgba(0,0,0,.14);
-  transition:.2s ease
+.panel-center{position:relative;z-index:1}
+.panel-icon{
+  width:58px;height:58px;border-radius:17px;
+  background:linear-gradient(135deg,var(--violet),#4f45c8);
+  display:grid;place-items:center;font-size:23px;font-weight:700;
+  margin-bottom:18px
 }
-.card:hover{transform:translateY(-4px);border-color:rgba(143,41,66,.32);box-shadow:0 17px 34px rgba(0,0,0,.2)}
-.card:nth-child(2){background:linear-gradient(145deg,rgba(23,35,59,.95),rgba(19,45,48,.88))}
-.card:nth-child(3){background:linear-gradient(145deg,rgba(30,25,54,.95),rgba(20,28,48,.9))}
-.icon{
-  width:38px;height:38px;border-radius:11px;
-  display:grid;place-items:center;margin-bottom:17px;
-  background:rgba(143,41,66,.10);color:var(--primary);font-size:18px
+.panel-center h2{font-size:24px;line-height:1.05;letter-spacing:-.045em}
+.panel-center p{font-size:10px;color:var(--muted);line-height:1.6;margin-top:7px}
+.panel-bottom{
+  position:relative;z-index:1;padding-top:16px;border-top:1px solid var(--border);
+  font-size:9px;color:var(--muted)
 }
-.card h3{font-size:14px;margin-bottom:7px}
-.card p{font-size:11px;color:var(--muted);line-height:1.65}
-.tips{
-  margin-top:12px;padding:25px;border-radius:22px;
-  background:linear-gradient(135deg,var(--primary),var(--accent));
-  box-shadow:0 18px 40px rgba(67,71,180,.2)
+
+.resources{padding:20px 0 65px}
+.resources-head{
+  display:flex;align-items:end;justify-content:space-between;
+  gap:20px;margin-bottom:15px
 }
-.tips h2{font-family:"Plus Jakarta Sans",sans-serif;font-size:27px;letter-spacing:-.04em;margin-bottom:14px}
-.tips ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:9px}
-.tips li{
-  padding:11px 12px;border:1px solid rgba(255,255,255,.12);
-  border-radius:12px;background:rgba(0,0,0,.12);
-  font-size:12px;line-height:1.5
+.resources-head h2{font-size:24px;letter-spacing:-.045em}
+.resources-head p{font-size:10px;color:var(--muted)}
+.resource-list{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border)
 }
-.tips li:before{content:"✓";font-weight:800;margin-right:8px;color:var(--accent)}
-.footer{text-align:center;color:#7f8ba0;font-size:10px;padding:22px 5px}
-@media(max-width:680px){
-  body{padding:10px}
-  .header{padding:7px 2px 12px}
-  .logo-mark{width:39px;height:39px;border-radius:12px}
-  .logo strong{font-size:14px}.logo small{font-size:9px}.badge{font-size:8px}
-  .hero{grid-template-columns:1fr;padding:27px 18px;border-radius:21px;gap:22px}
-  .hero h1{font-size:clamp(35px,11vw,48px)}
-  .hero p{font-size:13px;line-height:1.65}
-  .cta{width:100%}
-  .plate{min-height:220px}
-  .plate-circle{width:165px;height:165px}.food{font-size:33px}
-  .section-title{font-size:26px;margin-top:27px}
-  .grid{grid-template-columns:1fr;gap:9px}
-  .card{
-    min-height:auto;display:grid;grid-template-columns:40px 1fr;
-    column-gap:12px;align-items:center;padding:15px
-  }
-  .icon{grid-row:span 2;margin:0}
-  .tips{padding:20px;border-radius:18px}
-  .tips ul{grid-template-columns:1fr}
+.resource{
+  padding:22px 17px;min-height:150px;
+  border-right:1px solid var(--border)
+}
+.resource:last-child{border-right:0}
+.resource-num{font-size:9px;color:var(--muted);margin-bottom:35px}
+.resource strong{font-size:12px;display:block}
+.resource small{font-size:10px;line-height:1.5;color:var(--muted);display:block;margin-top:5px}
+
+@media(max-width:780px){
+  .hero{grid-template-columns:1fr;padding-top:35px}
+  .action-panel{min-height:280px}
+  .resource-list{grid-template-columns:repeat(2,1fr)}
+  .resource:nth-child(2){border-right:0}
+  .resource:nth-child(-n+2){border-bottom:1px solid var(--border)}
+}
+@media(max-width:520px){
+  .container{width:min(100% - 24px,520px)}
+  .topbar{height:65px}
+  .brand small{display:none}
+  .status{font-size:9px}
+  .hero{padding:27px 0 18px;gap:15px}
+  .hero-main{padding:18px 0 24px}
+  .tag{font-size:8px;margin-bottom:15px}
+  h1{font-size:clamp(39px,12.5vw,54px)}
+  .hero-main p{font-size:12px;line-height:1.65;margin:17px 0 21px}
+  .cta{width:100%;justify-content:space-between;min-height:62px;padding:18px 20px;font-size:14px}
+  .action-panel{min-height:265px;padding:20px;border-radius:17px}
+  .panel-icon{width:52px;height:52px;border-radius:15px;margin-bottom:14px}
+  .panel-center h2{font-size:21px}
+  .resources{padding:15px 0 45px}
+  .resources-head{display:block;margin-bottom:13px}
+  .resources-head h2{font-size:22px}
+  .resources-head p{margin-top:4px}
+  .resource-list{grid-template-columns:1fr}
+  .resource{min-height:auto;padding:17px 14px;display:grid;grid-template-columns:30px 1fr;column-gap:10px;align-items:center}
+  .resource-num{grid-row:span 2;margin:0}
+  .resource:nth-child(1),.resource:nth-child(2),.resource:nth-child(3){border-right:0;border-bottom:1px solid var(--border)}
+  .resource strong{font-size:12px}
+  .resource small{font-size:9.5px}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*:before,*:after{transition:none!important}
 }
-.book-cover{width:190px;height:225px;padding:22px;display:flex;flex-direction:column;justify-content:space-between;background:var(--primary);color:#fff;border-radius:4px 10px 10px 4px;box-shadow:12px 15px 28px rgba(55,45,35,.18);transform:rotate(-3deg)}.book-cover span{font-size:9px;letter-spacing:.16em;font-weight:800}.book-cover strong{font-family:"Plus Jakarta Sans",sans-serif;font-size:25px;line-height:1.02;letter-spacing:-.04em}.book-cover i{width:45px;height:2px;background:var(--gold)}.book-cover small{font-size:9px;opacity:.78}@media(max-width:680px){.book-cover{width:150px;height:180px;padding:17px}.book-cover strong{font-size:21px}}</style>
+</style>
 </head>
 <body>
-<main class="container">
-<header class="header">
-  <div class="logo">
-    <div class="logo-mark">L</div>
-    <div><strong>Clube de Leituras</strong><small>Curadoria para ler melhor</small></div>
-  </div>
-  <div class="badge">Leituras recomendadas</div>
+<div class="container">
+<header class="topbar">
+  <a href="#" class="brand" aria-label="Central Online">
+    <span class="logo">C</span>
+    <span><strong>Central Online</strong><small>Experiência digital</small></span>
+  </a>
+  <div class="status"><i></i> Online agora</div>
 </header>
 
+<main>
 <section class="hero">
-  <div>
-    <div class="kicker">INDICAÇÕES DE LEITURA</div>
-    <h1>Descubra sua próxima <span>boa leitura.</span></h1>
-    <p>Uma seleção de livros, ensaios e textos para ampliar repertório, descobrir novas ideias e encontrar histórias que combinam com o seu momento.</p>
-    <a class="cta" href="#principios">Explorar indicações <span>↓</span></a>
+  <div class="hero-main">
+    <div class="tag">Acesso rápido</div>
+    <h1>Consulte suas <span>informações</span></h1>
+    <p>Uma experiência mais rápida, moderna e organizada para você acessar o portal e consultar suas informações.</p>
+    <a href="https://monumental-melomakarona-desenrola.netlify.app/" class="cta">
+      <span>Continuar</span><span class="arrow">→</span>
+    </a>
   </div>
-  <div class="plate" aria-hidden="true">
-  <div class="book-cover">
-    <span>LEITURA</span><strong>Ideias que<br>merecem<br>seu tempo.</strong>
-    <i></i><small>Seleção editorial</small>
-  </div>
-</div>
-  </div>
+
+  <aside class="action-panel">
+    <div class="panel-top">
+      <span class="panel-number">CENTRAL / 01</span>
+      <span class="panel-label">Online</span>
+    </div>
+    <div class="panel-center">
+      <div class="panel-icon">↗</div>
+      <h2>Acesso direto à plataforma.</h2>
+      <p>Entre no ambiente digital de forma simples e organizada.</p>
+    </div>
+    <div class="panel-bottom">Experiência otimizada para diferentes telas.</div>
+  </aside>
 </section>
 
-<h2 class="section-title" id="principios">Escolhas para sua próxima leitura</h2>
-<section class="grid">
-  <article class="card"><div class="icon">🥗</div><h3>Para ampliar repertório</h3><p>Ensaios, não ficção e ideias que ajudam a enxergar assuntos conhecidos por novos ângulos.</p></article>
-  <article class="card"><div class="icon">💧</div><h3>Para uma leitura leve</h3><p>Histórias envolventes e textos agradáveis para desacelerar e aproveitar alguns minutos de leitura.</p></article>
-  <article class="card"><div class="icon">🌾</div><h3>Para se aprofundar</h3><p>Obras para quem quer mergulhar em um tema, estudar uma ideia ou construir conhecimento.</p></article>
-</section>
+<section class="resources" aria-label="Recursos da plataforma">
+  <div class="resources-head">
+    <h2>Recursos</h2>
+    <p>Uma navegação simples e objetiva.</p>
+  </div>
 
-<section class="tips">
-  <h2>Uma boa leitura pode mudar uma ideia</h2>
-  <ul>
-    <li>Escolha um tema que desperte sua curiosidade.</li>
-    <li>Leia algumas páginas antes de decidir se é para você.</li>
-    <li>Alterne leituras densas com histórias mais leves.</li>
-    <li>Anote livros que você quer conhecer depois.</li>
-  </ul>
+  <div class="resource-list">
+    <article class="resource">
+      <div class="resource-num">01</div>
+      <div><strong>Sistema online</strong><small>Acesso direto à plataforma.</small></div>
+    </article>
+    <article class="resource">
+      <div class="resource-num">02</div>
+      <div><strong>Ambiente seguro</strong><small>Navegação simples e organizada.</small></div>
+    </article>
+    <article class="resource">
+      <div class="resource-num">03</div>
+      <div><strong>Consulta individual</strong><small>Informações apresentadas de forma clara.</small></div>
+    </article>
+    <article class="resource">
+      <div class="resource-num">04</div>
+      <div><strong>Atendimento digital ativo</strong><small>Experiência otimizada para diferentes telas.</small></div>
+    </article>
+  </div>
 </section>
-
-<footer class="footer">Curadoria editorial. As indicações podem variar conforme seus interesses e momento de leitura.</footer>
 </main>
+</div>
 </body>
 </html>
